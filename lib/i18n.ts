@@ -19,6 +19,8 @@ export type TranslationKey =
   | 'gh.npm.lbl' | 'gh.npm.desc'
   | 'footer.tagline' | 'footer.project' | 'footer.source' | 'footer.author'
   | 'footer.bottom.l' | 'footer.bottom.r'
+  | 'tui.online' | 'tui.offline' | 'tui.section.online' | 'tui.section.activity' | 'tui.section.messages'
+  | 'tui.empty' | 'tui.no.activity' | 'tui.you'
 
 type Translations = Record<TranslationKey, string>
 
@@ -63,7 +65,7 @@ export const I18N: Record<Locale, Translations> = {
     'feature.5.title': 'self-host friendly',
     'feature.5.desc': 'aponte --hostUri pro seu servidor. roda local, em vps, em qualquer lugar que aceite websocket.',
     'feature.6.title': 'open · mit · pequeno',
-    'feature.6.desc': 'cliente e servidor caem na cabeça em uma sentada. typescript completo, dependências mínimas.',
+    'feature.6.desc': 'cliente e servidor com codebase enxuta e legível. typescript, dependências mínimas.',
 
     'qs.label': '// quickstart · cliente',
     'qs.title.pre': 'conecte no servidor de teste em ',
@@ -101,8 +103,8 @@ export const I18N: Record<Locale, Translations> = {
     'cmd.col.scope': 'escopo',
 
     'gh.label': '// código aberto',
-    'gh.title': 'dois repos. pequenos. typescript completo.',
-    'gh.lead': 'cliente (ink + react no terminal) e servidor (websockets) — cada um cabe na cabeça em uma sentada.',
+    'gh.title': 'dois repositórios. código enxuto. typescript.',
+    'gh.lead': 'cliente (ink + react no terminal) e servidor (websockets) — cada um com codebase pequena e direta.',
     'gh.right': 'mit · ',
 
     'gh.client.lbl': 'cliente · cli',
@@ -112,12 +114,21 @@ export const I18N: Record<Locale, Translations> = {
     'gh.npm.lbl': 'pacote · npm',
     'gh.npm.desc': 'binário publicado no npm. rode com npx ou instale global. node ≥ 24, dependências mínimas.',
 
-    'footer.tagline': 'chat efêmero, websocket-first, feito pra quem nunca fechou o terminal. mit · sem analytics · sem cadastro.',
+    'footer.tagline': 'chat efêmero, websocket-first, código aberto. mit · sem analytics · sem cadastro.',
     'footer.project': 'projeto',
     'footer.source': 'source',
     'footer.author': 'autor',
     'footer.bottom.l': 'mantido por matheus sartori · build {date}',
     'footer.bottom.r': 'public server: ws://hackerchatserver.mattsartori.com.br',
+
+    'tui.online': 'online',
+    'tui.offline': 'offline',
+    'tui.section.online': 'online',
+    'tui.section.activity': 'atividade',
+    'tui.section.messages': 'mensagens',
+    'tui.empty': '(vazio)',
+    'tui.no.activity': '(sem atividade)',
+    'tui.you': '(você)',
   },
   'en': {
     'nav.features': 'features',
@@ -159,7 +170,7 @@ export const I18N: Record<Locale, Translations> = {
     'feature.5.title': 'self-host friendly',
     'feature.5.desc': 'point --hostUri at your own server. runs locally, on a vps, anywhere that speaks websocket.',
     'feature.6.title': 'open · mit · tiny',
-    'feature.6.desc': 'client and server fit in your head in one sitting. full typescript, minimal deps.',
+    'feature.6.desc': 'client and server with a lean, readable codebase. full typescript, minimal deps.',
 
     'qs.label': '// quickstart · client',
     'qs.title.pre': 'connect to the test server in ',
@@ -198,7 +209,7 @@ export const I18N: Record<Locale, Translations> = {
 
     'gh.label': '// open source',
     'gh.title': 'two repos. small. fully typed.',
-    'gh.lead': 'client (ink + react in the terminal) and server (websockets) — each fits in your head in one sitting.',
+    'gh.lead': 'client (ink + react in the terminal) and server (websockets) — each a small, self-contained codebase.',
     'gh.right': 'mit · ',
 
     'gh.client.lbl': 'client · cli',
@@ -208,11 +219,20 @@ export const I18N: Record<Locale, Translations> = {
     'gh.npm.lbl': 'package · npm',
     'gh.npm.desc': 'binary published on npm. run with npx or install globally. node ≥ 24, minimal deps.',
 
-    'footer.tagline': 'ephemeral chat, websocket-first, made for people who never close the terminal. mit · no analytics · no signup.',
+    'footer.tagline': 'ephemeral chat, websocket-first, open source. mit · no analytics · no signup.',
     'footer.project': 'project',
     'footer.source': 'source',
     'footer.author': 'author',
     'footer.bottom.l': 'maintained by matheus sartori · build {date}',
     'footer.bottom.r': 'public server: ws://hackerchatserver.mattsartori.com.br',
+
+    'tui.online': 'online',
+    'tui.offline': 'offline',
+    'tui.section.online': 'online',
+    'tui.section.activity': 'activity',
+    'tui.section.messages': 'messages',
+    'tui.empty': '(empty)',
+    'tui.no.activity': '(no activity)',
+    'tui.you': '(you)',
   },
 }

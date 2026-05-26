@@ -4,6 +4,7 @@ import { useTickingClock } from '@/hooks/useTickingClock'
 import { getUserColor } from '@/lib/getUserColor'
 import { formatTime, formatShort } from '@/lib/formatTime'
 import { TerminalUser, TerminalActivity, TerminalMessage } from '@/types/terminal'
+import { useI18n } from '@/contexts/I18nContext'
 
 interface TerminalWindowProps {
   windowTitle?: string
@@ -36,6 +37,7 @@ export function TerminalWindow({
   showCount = true,
   maxLength = 500,
 }: TerminalWindowProps) {
+  const { t } = useI18n()
   const clock = useTickingClock(startClock)
   const yourColor = getUserColor(userName)
 
@@ -73,7 +75,7 @@ export function TerminalWindow({
             <span className="status">
               <span className="dot">●</span>
               <span style={{ color: connected ? 'var(--u-green)' : 'var(--u-red)' }}>
-                {connected ? 'online' : 'offline'}
+                {connected ? t('tui.online') : t('tui.offline')}
               </span>
             </span>
             <span className="sep">·</span>
@@ -87,17 +89,17 @@ export function TerminalWindow({
           <div className="tui-sidebar">
             <div className="tui-online">
               <div className="tui-section-title">
-                <span>online <span className="count">({users.length})</span></span>
+                <span>{t('tui.section.online')} <span className="count">({users.length})</span></span>
               </div>
               {users.length === 0 ? (
-                <div style={{ color: 'var(--tui-fg-dimmer)' }}>(empty)</div>
+                <div style={{ color: 'var(--tui-fg-dimmer)' }}>{t('tui.empty')}</div>
               ) : users.map((u, i) => {
                 const color = getUserColor(u.name)
                 return (
                   <div className="tui-user" key={u.name + i}>
                     <span className={color}>●</span>
                     <span className={`${color}${u.self ? ' b' : ''}`}>{u.name}</span>
-                    {u.self && <span className="you-tag">(you)</span>}
+                    {u.self && <span className="you-tag">{t('tui.you')}</span>}
                   </div>
                 )
               })}
@@ -105,10 +107,10 @@ export function TerminalWindow({
 
             <div className="tui-activity">
               <div className="tui-section-title">
-                <span>activity</span>
+                <span>{t('tui.section.activity')}</span>
               </div>
               {activity.length === 0 ? (
-                <div style={{ color: 'var(--tui-fg-dimmer)' }}>(no activity)</div>
+                <div style={{ color: 'var(--tui-fg-dimmer)' }}>{t('tui.no.activity')}</div>
               ) : activity.map((a, i) => (
                 <div className="tui-activity-row" key={i}>
                   <span className="ts">{formatShort(a.timestamp)}</span>
@@ -123,7 +125,7 @@ export function TerminalWindow({
 
           <div className="tui-messages">
             <div className="tui-msg-header">
-              <span style={{ fontWeight: 700 }}>messages</span>
+              <span style={{ fontWeight: 700 }}>{t('tui.section.messages')}</span>
               {showCount && (
                 <span className="count">{messages.length}/{messages.length}</span>
               )}
