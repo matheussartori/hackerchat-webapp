@@ -16,7 +16,7 @@ export type TranslationKey =
   | 'cmd.col.flag' | 'cmd.col.shortcut' | 'cmd.col.desc' | 'cmd.col.scope'
   | 'gh.label' | 'gh.title' | 'gh.lead' | 'gh.right'
   | 'gh.client.lbl' | 'gh.client.desc' | 'gh.server.lbl' | 'gh.server.desc'
-  | 'gh.npm.lbl' | 'gh.npm.desc'
+  | 'gh.npm.lbl' | 'gh.npm.desc' | 'gh.cli.lbl' | 'gh.cli.desc'
   | 'footer.tagline' | 'footer.project' | 'footer.source' | 'footer.author'
   | 'footer.bottom.l' | 'footer.bottom.r'
   | 'tui.online' | 'tui.offline' | 'tui.section.online' | 'tui.section.activity' | 'tui.section.messages'
