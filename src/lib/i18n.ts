@@ -21,6 +21,17 @@ export type TranslationKey =
   | 'footer.bottom.l' | 'footer.bottom.r'
   | 'tui.online' | 'tui.offline' | 'tui.section.online' | 'tui.section.activity' | 'tui.section.messages'
   | 'tui.empty' | 'tui.no.activity' | 'tui.you'
+  | 'nav.playground'
+  | 'pg.label' | 'pg.title.pre' | 'pg.title.accent' | 'pg.lead'
+  | 'pg.form.title' | 'pg.form.lead'
+  | 'pg.field.server' | 'pg.field.server.hint'
+  | 'pg.field.username' | 'pg.field.username.hint'
+  | 'pg.field.room' | 'pg.field.room.hint'
+  | 'pg.connect' | 'pg.connecting' | 'pg.disconnect'
+  | 'pg.status.idle' | 'pg.status.connecting' | 'pg.status.open' | 'pg.status.closing' | 'pg.status.closed'
+  | 'pg.send' | 'pg.input.placeholder' | 'pg.input.placeholder.disconnected'
+  | 'pg.empty.messages' | 'pg.error.connection' | 'pg.tip.title' | 'pg.tip.body'
+  | 'pg.right'
 
 type Translations = Record<TranslationKey, string>
 
@@ -119,7 +130,7 @@ export const I18N: Record<Locale, Translations> = {
     'footer.source': 'source',
     'footer.author': 'autor',
     'footer.bottom.l': 'mantido por matheus sartori · build {date}',
-    'footer.bottom.r': 'public server: ws://hackerchatserver.mattsartori.com.br',
+    'footer.bottom.r': 'public server: wss://hackerchatserver.mattsartori.com.br',
 
     'tui.online': 'online',
     'tui.offline': 'offline',
@@ -129,6 +140,36 @@ export const I18N: Record<Locale, Translations> = {
     'tui.empty': '(vazio)',
     'tui.no.activity': '(sem atividade)',
     'tui.you': '(você)',
+
+    'nav.playground': 'playground',
+    'pg.label': '// playground · live',
+    'pg.title.pre': 'um chat real, dentro do ',
+    'pg.title.accent': 'navegador',
+    'pg.lead': 'conecte a qualquer servidor hackerchat via websocket e troque mensagens em tempo real — sem instalar nada. movido pelo <b>@matheussartori/hackerchat-js-sdk</b>.',
+    'pg.form.title': 'conectar',
+    'pg.form.lead': 'preencha o endereço, escolha um nick e uma sala. a sala é criada se não existir.',
+    'pg.field.server': 'servidor',
+    'pg.field.server.hint': 'url completa do websocket (ws:// ou wss://)',
+    'pg.field.username': 'username',
+    'pg.field.username.hint': 'como você vai aparecer na sala',
+    'pg.field.room': 'sala',
+    'pg.field.room.hint': 'qualquer nome — letras, números, traços',
+    'pg.connect': 'conectar',
+    'pg.connecting': 'conectando...',
+    'pg.disconnect': 'desconectar',
+    'pg.status.idle': 'ocioso',
+    'pg.status.connecting': 'conectando',
+    'pg.status.open': 'conectado',
+    'pg.status.closing': 'fechando',
+    'pg.status.closed': 'desconectado',
+    'pg.send': 'enviar',
+    'pg.input.placeholder': 'digite uma mensagem e pressione enter...',
+    'pg.input.placeholder.disconnected': 'conecte para enviar mensagens',
+    'pg.empty.messages': 'nenhuma mensagem ainda. mande o primeiro "olá!"',
+    'pg.error.connection': 'falha ao conectar. confira o endereço e tente de novo.',
+    'pg.tip.title': 'dica',
+    'pg.tip.body': 'o servidor público é wss://hackerchatserver.mattsartori.com.br. para self-host, aponte aqui sua url.',
+    'pg.right': 'sdk · ',
   },
   'en': {
     'nav.features': 'features',
@@ -224,7 +265,7 @@ export const I18N: Record<Locale, Translations> = {
     'footer.source': 'source',
     'footer.author': 'author',
     'footer.bottom.l': 'maintained by matheus sartori · build {date}',
-    'footer.bottom.r': 'public server: ws://hackerchatserver.mattsartori.com.br',
+    'footer.bottom.r': 'public server: wss://hackerchatserver.mattsartori.com.br',
 
     'tui.online': 'online',
     'tui.offline': 'offline',
@@ -234,5 +275,35 @@ export const I18N: Record<Locale, Translations> = {
     'tui.empty': '(empty)',
     'tui.no.activity': '(no activity)',
     'tui.you': '(you)',
+
+    'nav.playground': 'playground',
+    'pg.label': '// playground · live',
+    'pg.title.pre': 'real chat, inside the ',
+    'pg.title.accent': 'browser',
+    'pg.lead': 'connect to any hackerchat server over websocket and chat in real time — no install. powered by <b>@matheussartori/hackerchat-js-sdk</b>.',
+    'pg.form.title': 'connect',
+    'pg.form.lead': 'fill in the server, pick a nick and a room. the room is created if it does not exist.',
+    'pg.field.server': 'server',
+    'pg.field.server.hint': 'full websocket url (ws:// or wss://)',
+    'pg.field.username': 'username',
+    'pg.field.username.hint': 'how you will appear in the room',
+    'pg.field.room': 'room',
+    'pg.field.room.hint': 'any name — letters, numbers, dashes',
+    'pg.connect': 'connect',
+    'pg.connecting': 'connecting...',
+    'pg.disconnect': 'disconnect',
+    'pg.status.idle': 'idle',
+    'pg.status.connecting': 'connecting',
+    'pg.status.open': 'connected',
+    'pg.status.closing': 'closing',
+    'pg.status.closed': 'disconnected',
+    'pg.send': 'send',
+    'pg.input.placeholder': 'type a message and press enter...',
+    'pg.input.placeholder.disconnected': 'connect to send messages',
+    'pg.empty.messages': 'no messages yet. say hi!',
+    'pg.error.connection': 'connection failed. check the url and try again.',
+    'pg.tip.title': 'tip',
+    'pg.tip.body': 'the public server is wss://hackerchatserver.mattsartori.com.br. for self-host, point this at your own url.',
+    'pg.right': 'sdk · ',
   },
 }

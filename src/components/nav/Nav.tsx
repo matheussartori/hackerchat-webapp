@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useI18n } from '@/contexts/I18nContext'
 import { useTheme } from '@/contexts/ThemeContext'
 import { SunIcon, MoonIcon } from '@/components/ui/Icon'
@@ -16,11 +17,12 @@ export function Nav() {
           <span className="slash">/v1.0.0</span>
         </div>
         <div className="links">
-          <a href="#features">{t('nav.features')}</a>
-          <a href="#quickstart">{t('nav.quickstart')}</a>
-          <a href="#selfhost">{t('nav.selfhost')}</a>
-          <a href="#commands">{t('nav.commands')}</a>
-          <a href="#github">{t('nav.source')}</a>
+          <Link href="/#features">{t('nav.features')}</Link>
+          <Link href="/#quickstart">{t('nav.quickstart')}</Link>
+          <Link href="/#selfhost">{t('nav.selfhost')}</Link>
+          <Link href="/#commands">{t('nav.commands')}</Link>
+          <Link href="/#github">{t('nav.source')}</Link>
+          <Link href="/#playground">{t('nav.playground')}</Link>
         </div>
         <div className="nav-right">
           <div className="lang-switch" role="group" aria-label="language">

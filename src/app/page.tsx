@@ -5,6 +5,7 @@ import { Quickstart } from '@/components/quickstart/Quickstart'
 import { SelfHost } from '@/components/selfhost/SelfHost'
 import { Commands } from '@/components/commands/Commands'
 import { GitHub } from '@/components/github/GitHub'
+import { Playground } from '@/components/playground/Playground'
 import { Footer } from '@/components/footer/Footer'
 
 export default function Page() {
@@ -17,6 +18,7 @@ export default function Page() {
       <SelfHost />
       <Commands />
       <GitHub />
+      <Playground />
       <Footer />
     </>
   )
