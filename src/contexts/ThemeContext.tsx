@@ -17,14 +17,13 @@ const ThemeContext = createContext<ThemeContextValue>({
 })
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>('dark')
-
-  useEffect(() => {
+  const [theme, setThemeState] = useState<Theme>(() => {
     try {
       const stored = localStorage.getItem('hc.theme') as Theme | null
-      if (stored === 'dark' || stored === 'light') setThemeState(stored)
+      if (stored === 'dark' || stored === 'light') return stored
     } catch {}
-  }, [])
+    return 'dark'
+  })
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme

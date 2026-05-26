@@ -31,7 +31,6 @@ export function ChatDemo() {
   const [items, setItems] = useState<ScriptItem[]>([])
 
   useEffect(() => {
-    setItems([])
     const baseTs = makeBaseDate()
     const mk = (offsec: number, who: string, text: string) => makeMessage(baseTs, offsec, who, text)
 
@@ -64,7 +63,7 @@ export function ChatDemo() {
 
     const script = lang === 'en' ? scriptEn : scriptPt
     const timers = script.map(s => setTimeout(() => setItems(prev => [...prev, s]), s.delay))
-    const restart = setTimeout(() => setTick(t => t + 1), 11000)
+    const restart = setTimeout(() => { setItems([]); setTick(t => t + 1) }, 11000)
 
     return () => {
       timers.forEach(clearTimeout)
@@ -93,7 +92,7 @@ export function ChatDemo() {
       .map(i => ({ userName: i.userName, message: i.message!, timestamp: i.timestamp! }))
   }, [items])
 
-  const baseClock = useMemo(() => makeBaseDate(), [tick])
+  const baseClock = useMemo(() => makeBaseDate(), [])
   const hintsPt = ['enter envia', 'pgup/pgdn rolar', 'end retomar', 'esc sair']
   const hintsEn = ['enter send', 'pgup/pgdn scroll', 'end resume', 'esc quit']
 

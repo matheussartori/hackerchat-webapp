@@ -16,14 +16,13 @@ const I18nContext = createContext<I18nContextValue>({
 })
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Locale>('pt-br')
-
-  useEffect(() => {
+  const [lang, setLangState] = useState<Locale>(() => {
     try {
       const stored = localStorage.getItem('hc.lang') as Locale | null
-      if (stored === 'en' || stored === 'pt-br') setLangState(stored)
+      if (stored === 'en' || stored === 'pt-br') return stored
     } catch {}
-  }, [])
+    return 'pt-br'
+  })
 
   useEffect(() => {
     try { localStorage.setItem('hc.lang', lang) } catch {}

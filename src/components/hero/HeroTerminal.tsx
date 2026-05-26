@@ -16,9 +16,6 @@ export function HeroTerminal() {
     : ['', 'o', 'oi', 'oi ', 'oi v', 'oi vi', 'oi viv', 'oi vivi', 'oi vivi!']
 
   useEffect(() => {
-    setStep(0)
-    setDraftIdx(0)
-
     const schedule: [number, number][] = [
       [1, 600],
       [2, 1200],
@@ -48,13 +45,13 @@ export function HeroTerminal() {
       clearTimeout(typeTimer)
       clearTimeout(restart)
     }
-  }, [tick, lang])
+  }, [tick, draftSeq.length])
 
   const baseDate = useMemo(() => {
     const d = new Date()
     d.setHours(1, 41, 0, 0)
     return d
-  }, [tick])
+  }, [])
 
   const users = useMemo<TerminalUser[]>(() => {
     const u: TerminalUser[] = []

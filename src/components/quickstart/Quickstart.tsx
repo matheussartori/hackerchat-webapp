@@ -9,7 +9,7 @@ const STEP_COUNT = [1, 2, 3, 4] as const
 type StepIndex = typeof STEP_COUNT[number]
 
 export function Quickstart() {
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const [active, setActive] = useState(0)
 
   return (
@@ -66,7 +66,7 @@ export function Quickstart() {
               }
             />
             <div style={{ marginTop: 22 }}>
-              <ChatDemo />
+              <ChatDemo key={lang} />
             </div>
           </div>
         </div>
