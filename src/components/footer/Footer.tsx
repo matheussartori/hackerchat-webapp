@@ -34,7 +34,7 @@ export function Footer() {
             <ul>
               <li><a href="https://github.com/matheussartori/hackerchat-terminal-client" target="_blank" rel="noreferrer">terminal-client</a></li>
               <li><a href="https://github.com/matheussartori/hackerchat-server" target="_blank" rel="noreferrer">hackerchat-server</a></li>
-              <li><a href="https://www.npmjs.com/package/@matheussartori/hackerchat-client" target="_blank" rel="noreferrer">npm package</a></li>
+              <li><a href="https://www.npmjs.com/package/@matheussartori/hackerchat-js-sdk" target="_blank" rel="noreferrer">hackerchat-js-sdk</a></li>
               <li><a href="https://github.com/matheussartori/hackerchat-terminal-client/blob/main/LICENSE" target="_blank" rel="noreferrer">mit license</a></li>
             </ul>
           </div>

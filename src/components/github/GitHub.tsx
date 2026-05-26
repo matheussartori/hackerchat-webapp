@@ -78,10 +78,18 @@ export function GitHub() {
           <GitHubCard
             href="https://www.npmjs.com/package/@matheussartori/hackerchat-client"
             isNpm
-            label={t('gh.npm.lbl')}
+            label={t('gh.cli.lbl')}
             repo="@matheussartori / hackerchat-client"
-            desc={t('gh.npm.desc')}
+            desc={t('gh.cli.desc')}
             stats={['npx ready', '· v1.x', '· mit']}
+          />
+          <GitHubCard
+            href="https://www.npmjs.com/package/@matheussartori/hackerchat-js-sdk"
+            isNpm
+            label={t('gh.npm.lbl')}
+            repo="@matheussartori / hackerchat-js-sdk"
+            desc={t('gh.npm.desc')}
+            stats={['framework-agnostic', '· react bindings', '· mit']}
           />
         </div>
       </div>
