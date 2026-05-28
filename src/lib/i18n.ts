@@ -18,7 +18,7 @@ export type TranslationKey =
   | 'gh.client.lbl' | 'gh.client.desc' | 'gh.server.lbl' | 'gh.server.desc'
   | 'gh.npm.lbl' | 'gh.npm.desc' | 'gh.cli.lbl' | 'gh.cli.desc'
   | 'footer.tagline' | 'footer.project' | 'footer.source' | 'footer.author'
-  | 'footer.bottom.l' | 'footer.bottom.r'
+  | 'footer.bottom.l' | 'footer.bottom.r' | 'footer.bottom.by'
   | 'tui.online' | 'tui.offline' | 'tui.section.online' | 'tui.section.activity' | 'tui.section.messages'
   | 'tui.empty' | 'tui.no.activity' | 'tui.you'
   | 'nav.playground'
@@ -131,7 +131,8 @@ export const I18N: Record<Locale, Translations> = {
     'footer.project': 'projeto',
     'footer.source': 'source',
     'footer.author': 'autor',
-    'footer.bottom.l': 'mantido por matheus sartori · build {date}',
+    'footer.bottom.l': 'mantido por',
+    'footer.bottom.by': 'matheus sartori',
     'footer.bottom.r': 'public server: wss://hackerchatserver.mattsartori.com.br',
 
     'tui.online': 'online',
@@ -268,7 +269,8 @@ export const I18N: Record<Locale, Translations> = {
     'footer.project': 'project',
     'footer.source': 'source',
     'footer.author': 'author',
-    'footer.bottom.l': 'maintained by matheus sartori · build {date}',
+    'footer.bottom.l': 'maintained by',
+    'footer.bottom.by': 'matheus sartori',
     'footer.bottom.r': 'public server: wss://hackerchatserver.mattsartori.com.br',
 
     'tui.online': 'online',

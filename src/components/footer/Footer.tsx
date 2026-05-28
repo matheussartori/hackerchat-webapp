@@ -48,7 +48,11 @@ export function Footer() {
           </div>
         </div>
         <div className="bottom">
-          <div>{t('footer.bottom.l', { date: buildDate })}</div>
+          <div>
+            {t('footer.bottom.l')}{' '}
+            <a href="https://mattsartori.com.br" target="_blank" rel="noreferrer">{t('footer.bottom.by')}</a>
+            {' '}· build {buildDate}
+          </div>
           <div>{t('footer.bottom.r')}</div>
         </div>
       </div>
