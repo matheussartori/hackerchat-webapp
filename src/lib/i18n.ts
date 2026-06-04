@@ -2,7 +2,7 @@ export type Locale = 'pt-br' | 'en'
 
 export type TranslationKey =
   | 'nav.features' | 'nav.quickstart' | 'nav.selfhost' | 'nav.commands' | 'nav.source'
-  | 'hero.badge.online' | 'hero.badge.offline' | 'hero.badge.checking'
+  | 'hero.badge.online' | 'hero.badge.offline' | 'hero.badge.checking' | 'hero.badge.waking'
   | 'hero.title.l1' | 'hero.title.l2.pre' | 'hero.title.l2.accent'
   | 'hero.lead' | 'hero.cta.primary' | 'hero.cta.secondary'
   | 'hero.stat.latency' | 'hero.stat.protocol' | 'hero.stat.client' | 'hero.stat.license' | 'hero.stat.client.v'
@@ -46,6 +46,7 @@ export const I18N: Record<Locale, Translations> = {
     'hero.badge.online': 'servidor de teste online',
     'hero.badge.offline': 'servidor de teste offline',
     'hero.badge.checking': 'verificando servidor de teste...',
+    'hero.badge.waking': 'acordando servidor de teste...',
     'hero.title.l1': 'chat de verdade,',
     'hero.title.l2.pre': 'dentro do ',
     'hero.title.l2.accent': 'terminal',
@@ -184,6 +185,7 @@ export const I18N: Record<Locale, Translations> = {
     'hero.badge.online': 'public test server online',
     'hero.badge.offline': 'public test server offline',
     'hero.badge.checking': 'checking public test server...',
+    'hero.badge.waking': 'waking up public test server...',
     'hero.title.l1': 'real chat,',
     'hero.title.l2.pre': 'inside the ',
     'hero.title.l2.accent': 'terminal',
