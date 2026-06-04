@@ -120,6 +120,7 @@ To add a new locale, extend the `Locale` type and add a corresponding translatio
 
 - [hackerchat-terminal-client](https://github.com/matheussartori/hackerchat-terminal-client) — The TUI client documented by this site
 - [hackerchat-server](https://github.com/matheussartori/hackerchat-server) — The WebSocket server backend
+- [hackerchat-js-sdk](https://github.com/matheussartori/hackerchat-js-sdk) — JavaScript/TypeScript SDK with framework-agnostic client and React bindings
 
 ## License
 
