@@ -2,7 +2,6 @@
 
 import { useI18n } from '@/contexts/I18nContext'
 
-const FEATURE_GLYPHS = ['◇', '⌁', '◐', '⌂', '✦', '∞'] as const
 const FEATURE_TAGS = ['rooms', 'ink', 'colors', 'zero-conf', 'self-host', 'open'] as const
 const FEATURE_INDICES = [1, 2, 3, 4, 5, 6] as const
 
@@ -27,8 +26,7 @@ export function Features() {
         <div className="features">
           {FEATURE_INDICES.map((i) => (
             <div className="feature" key={i}>
-              <div className="tag">— {String(i).padStart(2, '0')} · {FEATURE_TAGS[i - 1]}</div>
-              <div className="glyph">{FEATURE_GLYPHS[i - 1]}</div>
+              <div className="tag">{String(i).padStart(2, '0')} · {FEATURE_TAGS[i - 1]}</div>
               <h3>{t(`feature.${i as FeatureIndex}.title`)}</h3>
               <p>{t(`feature.${i as FeatureIndex}.desc`)}</p>
             </div>

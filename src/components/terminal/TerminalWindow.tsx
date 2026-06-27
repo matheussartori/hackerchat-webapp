@@ -71,16 +71,13 @@ export function TerminalWindow({
           </div>
           <div className="right">
             <span className="room">#{room}</span>
-            <span className="sep">·</span>
             <span className="status">
               <span className="dot">●</span>
               <span style={{ color: connected ? 'var(--u-green)' : 'var(--u-red)' }}>
                 {connected ? t('tui.online') : t('tui.offline')}
               </span>
             </span>
-            <span className="sep">·</span>
-            <span>@{userName}</span>
-            <span className="sep">·</span>
+            <span className="user">@{userName}</span>
             <span className="clock">{formatTime(clock)}</span>
           </div>
         </div>

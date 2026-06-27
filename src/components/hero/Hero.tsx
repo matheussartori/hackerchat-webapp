@@ -46,14 +46,12 @@ export function Hero() {
             </div>
             <div className="stat-strip">
               <div>
-                <div className="k">{t("hero.stat.latency")}</div>
-                <div className="v">
-                  <span className="acc">~31</span>ms
-                </div>
+                <div className="k">{t("hero.stat.transport")}</div>
+                <div className="v">websocket</div>
               </div>
               <div>
                 <div className="k">{t("hero.stat.protocol")}</div>
-                <div className="v">ws / rfc-6455</div>
+                <div className="v">rfc-6455</div>
               </div>
               <div>
                 <div className="k">{t("hero.stat.client")}</div>
